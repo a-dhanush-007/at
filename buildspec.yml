@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      php: 8.1
+  build:
+    commands:
+      - echo "Zipping app for Elastic Beanstalk..."
+      - zip -r ats.zip . -x "*.git*"
+artifacts:
+  files:
+    - ats.zip
